@@ -20,7 +20,7 @@ class Server:
         self.PORT = config.PORT
         self.MAX_CONNECTIONS = config.MAX_CONNECTIONS
 
-        self.CPU_LIMIT = config.THREAD_LIMIT
+        self.THREAD_LIMIT = config.THREAD_LIMIT
 
     def _prepare_socket(self):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -43,7 +43,7 @@ class Server:
     def serve(self):
         self._prepare_socket()
 
-        for i in range(self.CPU_LIMIT):
+        for i in range(self.THREAD_LIMIT):
             pid = os.fork()
 
             if pid == 0:
