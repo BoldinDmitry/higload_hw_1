@@ -20,7 +20,7 @@ class Server:
         self.PORT = config.PORT
         self.MAX_CONNECTIONS = config.MAX_CONNECTIONS
 
-        self.CPU_LIMIT = config.CPU_LIMIT
+        self.CPU_LIMIT = config.THREAD_LIMIT
 
     def _prepare_socket(self):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

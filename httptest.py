@@ -7,7 +7,7 @@ import httplib
 import unittest
 
 arg_host = "localhost"
-arg_port = 8080
+arg_port = 8090
 if len(sys.argv) > 1:
   arg_host = sys.argv[1]
 if len(sys.argv) > 2:
