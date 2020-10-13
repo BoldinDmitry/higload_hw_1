@@ -2,7 +2,7 @@ import pathlib
 
 from solution.config_parser import parse_config
 
-config = parse_config('/etc/httpd.conf')
+config = parse_config('httpd.conf')
 
 HTTP_VERSION = 1.1
 HTTP_ACCEPTABLE = ["HTTP/1.0", "HTTP/1.1"]
@@ -16,7 +16,7 @@ MEDIA_FOLDER_NAME = "httptest"
 MEDIA_ROOT = PROJECT_ROOT.joinpath(MEDIA_FOLDER_NAME)
 
 ADDRESS = "localhost"
-PORT = 80
+PORT = 8090
 
-MAX_CONNECTIONS = 5
-CPU_LIMIT = int(config.get("cpu_limit", 4))
+MAX_CONNECTIONS = 500
+THREAD_LIMIT = int(config.get("thread_limit", 100))
